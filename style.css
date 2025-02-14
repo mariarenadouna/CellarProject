@@ -12,7 +12,7 @@
 /*login page*/
 .box {
     width: 450px;
-    height: 380px;
+    height: 350px;
     padding: 10px;
     margin: 10px;
     background-color: white;
@@ -24,6 +24,7 @@
     text-align: center;
     display: block;
     margin: 10px auto;
+    box-shadow: 5px 10px gray;
   }
 
   /*Link to forget my Password*/
@@ -33,6 +34,11 @@
    color: black;
    text-decoration: none;
    margin-top: 10px;
+  }
+
+  .passwordReset:hover{
+    color: white;
+    text-decoration-line: underline;
   }
 
  .image{
@@ -47,9 +53,14 @@
    text-decoration:none;
    font-size: 20px;
    cursor: pointer;
-   margin-right: 60px;
+   margin-right: 50px;
    border-radius: 20px;
    float:right;
+ }
+
+ .button:hover{
+   color:white;
+   text-decoration-line: underline;
  }
 
  /*end of login page */
