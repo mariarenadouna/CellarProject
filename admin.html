@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <title>Cellar</title>
+        <!--fav icon-->
+    </head>
+
+    <body style="background-color: #e9dbc6;">
+        <div class="boxdec">
+
+            <div class="menu">
+                <h2> Καλώς Ήρθες, [όνομα_χρήστη] </h2>
+                <p>Ημερομηνία: <span id="currentDate"></span></p>
+                <a href="#" style="text-decoration: none;"><img src="calendar img.png"> <span>Ημερολόγιο</span> </a>
+                <a href="#" style="text-decoration: none;"><img src="user img.png"> <span>Χρήστης</span> </a>
+                <a href="index.html" style="text-decoration: none;"><img src="logout img.png"> <span>Αποσύνδεση</span> </a>
+            </div>
+
+            <!--Side Menu-->
+            <div class="sidebar" id="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="admin.html"><img src="table img.png"> <span>Overview</span> </a>
+                <a href="orders.html"><img src="orders img.png"> <span>Παραγγελίες</span> </a>
+                <a href="store.html"><img src="wine img.png"> <span>Αποθήκη</span> </a>
+                <a href="statistics.html"><img src="diagram img.png"> <span>Στατιστικά</span> </a>
+                <a href="customers.html"><img src="group img.png"><span>Πελάτες</span></a>
+                <a href="notifications.html"><img src="notifications img.png"> <span>Ειδοποιήσεις</span> </a>
+            </div>
+
+            <span style="font-size:30px;cursor:pointer; position: absolute; left: 100px;" onclick="openNav()">&#9776; open</span>
+
+            <script>
+                document.getElementById("currentDate").textContent = new Date().toLocaleDateString();
+                function openNav() {
+                  document.getElementById("sidebar").style.width = "250px";
+                }
+                
+                function closeNav() {
+                  document.getElementById("sidebar").style.width = "0";
+                }
+            </script>
+            <br>
+            <br>
+
+            <div class="dashboard-container">
+                <div class="card">
+                    <h3>Χρήστες</h3>
+                    <p>Συνολικοί χρήστες: 120</p>
+                </div>
+                <div class="card">
+                    <h3>Παραγγελίες</h3>
+                    <p>Συνολικές παραγγελίες: 340</p>
+                </div>
+                <div class="card">
+                    <h3>Κέρδη</h3>
+                    <p>Συνολικά κέρδη: 5,000€</p>
+                </div>
+            </div>
+            <br><br><br>
+            
+            <h3>Τελευταίες Δραστηριότητες</h3>
+            <ul class="activity-list">
+                <li>Ο χρήστης Αθανασίου Νίκος έκανε νέα παραγγελία</li>
+                <li>Η πληρωμή του χρήστη Νικολάου Ελένη επιβεβαιώθηκε</li>
+                <li>Ο διαχειριστής ενημέρωσε τις ρυθμίσεις</li>
+            </ul>
+
+            <br><br><br><br><br>
+            <div class="orders-container">
+                <table class="table">
+                    <caption>Πρόσφατες Παραγγελίες</caption>
+                    <tr>
+                        <th>Α/Α</th>
+                        <th>Όν. Πελάτη</th>
+                        <th>Ημ. Παραγγελίας</th>
+                        <th>Κωδ. Παραγγελίας</th>
+                        <th>Όν. Προϊόντος</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Παπαδόπουλος Γεώργιος</td>
+                        <td>14-02-2025</td>
+                        <td>1047-7589-2</td>
+                        <td>Κόκκινο Ημίγλυκο</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Δημητρίου Δημήτρης</td>
+                        <td>14-02-2025</td>
+                        <td>5555-8879-6</td>
+                        <td>Λευκό Ξηρό</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Ιωάννου Χρήστος</td>
+                        <td>12-02-2025</td>
+                        <td>6669-7771-8</td>
+                        <td>Λευκό Ξηρό</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Παπαδόπουλος Γεώργιος</td>
+                        <td>10-02-2025</td>
+                        <td>1047-7589-2</td>
+                        <td>Κόκκινο Ημίγλυκο</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Παπαδόπουλος Γεώργιος</td>
+                        <td>10-02-2025</td>
+                        <td>1047-7589-2</td>
+                        <td>Ροζέ Ημίγλυκο</td>
+                    </tr>
+                </table>
+            </div>
+            <br><br><br><br>
+            <a href="orders.html" class="buttonOrdrs">Όλες οι παραγγελίες</a>
+        </div>
+    </body>
+
+</html>

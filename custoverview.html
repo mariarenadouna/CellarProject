@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <title>Cellar</title>
+        <!--fav icon-->
+    </head>
+
+    <body style="background-color: #e9dbc6;">
+        <div class="boxdec">
+
+            <div class="menu">
+                <h2>Καλώς Ήρθες, [όνομα_χρήστη]</h2>
+                <p>Ημερομηνία: <span id="currentDate"></span></p>
+                <a href="#" style="text-decoration: none;"><img src="calendar img.png"> <span>Ημερολόγιο</span> </a>
+                <a href="#" style="text-decoration: none;"><img src="user img.png"> <span>Χρήστης</span> </a>
+                <a href="index.html" style="text-decoration: none;"><img src="logout img.png"> <span>Αποσύνδεση</span> </a>
+            </div>
+
+            <!--Side Menu-->
+            <div class="sidebar" id="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="admin.html"><img src="table img.png"> <span>Overview</span> </a>
+                <a href="orders.html"><img src="orders img.png"> <span>Παραγγελίες</span> </a>
+                <a href="store.html"><img src="wine img.png"> <span>Αποθήκη</span> </a>
+                <a href="statistics.html"><img src="diagram img.png"> <span>Στατιστικά</span> </a>
+                <a href="customers.html"><img src="group img.png"><span>Πελάτες</span></a>
+                <a href="notifications.html"><img src="notifications img.png"> <span>Ειδοποιήσεις</span> </a>
+            </div>
+
+            <span style="font-size:30px;cursor:pointer; position: absolute; left: 100px;" onclick="openNav()">&#9776; open</span>
+
+            <script>
+                function openNav() {
+                  document.getElementById("sidebar").style.width = "250px";
+                }
+                
+                function closeNav() {
+                  document.getElementById("sidebar").style.width = "0";
+                }
+                document.getElementById("currentDate").textContent = new Date().toLocaleDateString();
+            </script>
+
+            <!--Data-->
+            <br><br><br>
+            <div class="dashboard-container">
+                <div class="card">
+                    <h3>Τελευταία Παραγγελία</h3>
+                    <p>Προϊόντα: Κόκκινο Κρασί, Ροζέ</p>
+                    <p>Κατάσταση: <span class="status in-progress">Σε Εξέλιξη</span></p>
+                </div>
+                <br><br>
+                <div class="card">
+                    <h3>Εκκρεμείς Παραγγελίες</h3>
+                    <p>Καμία εκκρεμής παραγγελία</p>
+                </div>
+            </div>
+
+            <br><br>
+            <section class="recommendations">
+                <h3>Προτάσεις για σένα</h3>
+                <div class="product-suggestions">
+                    <div class="product-card">🍷 Κόκκινο Ξηρό</div>
+                    <div class="product-card">🥂 Σαμπάνια Brut</div>
+                    <div class="product-card">🍾 Ρούμι Premium</div>
+                </div>
+            </section>
+    
+            <br><br>
+            <section class="order-history">
+            <h3>Ιστορικό Παραγγελιών</h3>
+            <ul>
+                <li>10/02/2025 - Κόκκινο Ημίγλυκο</li>
+                <li>05/02/2025 - Ροζέ Ξηρό</li>
+                <li>02/02/2025 - Λευκό Ξηρό</li>
+            </ul>
+            </section>
+            <button class="buttonOrdrs">Νέα Παραγγελία</button>
+
+            <br><br><br>
+            <section class="offers">
+                <h3>Ειδικές Προσφορές</h3>
+                <p>🎉 10% έκπτωση σε όλα τα λευκά κρασιά!</p>
+                <p>🎉 Δωρεάν Μεταφορικά για Ελλάδα και Κύπρο!</p>
+            </section>
+
+            <!--Create the template of a new order-->
+        </div>
+    </body>
+</html>

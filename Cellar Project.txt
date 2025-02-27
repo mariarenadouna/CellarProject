@@ -1,0 +1,14 @@
+Cellar Project
+
+Admin View:
+
+Index.html: login page
+admin.html: overview page
+customers.html: list of customers page
+orders.html: Analytical table of orders
+store.html: store page
+statistics.html: statistics page
+notifications.html: notifications page
+
+Customer View:
+Index.html: login page (same to admin's)

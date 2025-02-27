@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <title>Cellar</title>
+        <!--fav icon-->
+    </head>
+
+    <body style="background-color: #e9dbc6;">
+        <div class="boxdec">
+
+            <div class="menu">
+                <h2>Καλώς Ήρθες, [όνομα_χρήστη]</h2>
+                <p>Ημερομηνία: <span id="currentDate"></span></p>
+                <a href="#" style="text-decoration: none;"><img src="calendar img.png"> <span>Ημερολόγιο</span> </a>
+                <a href="#" style="text-decoration: none;"><img src="user img.png"> <span>Χρήστης</span> </a>
+                <a href="index.html" style="text-decoration: none;"><img src="logout img.png"> <span>Αποσύνδεση</span> </a>
+            </div>
+
+            <!--Side Menu-->
+            <div class="sidebar" id="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="admin.html"><img src="table img.png"> <span>Overview</span> </a>
+                <a href="orders.html"><img src="orders img.png"> <span>Παραγγελίες</span> </a>
+                <a href="store.html"><img src="wine img.png"> <span>Αποθήκη</span> </a>
+                <a href="statistics.html"><img src="diagram img.png"> <span>Στατιστικά</span> </a>
+                <a href="customers.html"><img src="group img.png"><span>Πελάτες</span></a>
+                <a href="notifications.html"><img src="notifications img.png"> <span>Ειδοποιήσεις</span> </a>
+            </div>
+
+            <span style="font-size:30px;cursor:pointer; position: absolute; left: 100px;" onclick="openNav()">&#9776; open</span>
+
+            <script>
+                document.getElementById("currentDate").textContent = new Date().toLocaleDateString();
+                function openNav() {
+                  document.getElementById("sidebar").style.width = "250px";
+                }
+                
+                function closeNav() {
+                  document.getElementById("sidebar").style.width = "0";
+                }
+            </script>
+            <br>
+            <br>
+
+            <!--Drop Down List-->
+            <label for="stats-type">Επιλογή στατιστικών:</label>
+            <select id="stats-type" onchange="toggleMonthYear()">
+                <option value="total">Συνολικά</option>
+                <option value="monthly">Ανά μήνα</option>
+            </select>
+
+            <br><br><br>
+            <div id="month-year-container" style="display: none;">
+                <label for="month">Μήνας:</label>
+                <select id="month">
+                    <option value="jan">Ιανουάριος</option>
+                    <option value="feb">Φεβρουάριος</option>
+                    <option value="mar">Μάρτιος</option>
+                    <option value="apr">Απρίλιος</option>
+                    <option value="may">Μάιος</option>
+                    <option value="jun">Ιούνιος</option>
+                    <option value="jul">Ιούλιος</option>
+                    <option value="aug">Αύγουστος</option>
+                    <option value="sep">Σεπτέμβριος</option>
+                    <option value="oct">Οκτώβριος</option>
+                    <option value="nov">Νοέμβριος</option>
+                    <option value="dec">Δεκέμβριος</option>
+                </select>
+
+                <label for="year">Έτος:</label>
+                <select id="year"></select>
+            </div>
+
+            <script>
+                function toggleMonthYear() {
+                    let statsType = document.getElementById("stats-type").value;
+                    let container = document.getElementById("month-year-container");
+
+                    if (statsType === "monthly") {
+                        container.style.display = "block";
+                        populateYears();
+                    } else {
+                    container.style.display = "none";
+                    }
+                }
+
+                function populateYears() {
+                    let yearSelect = document.getElementById("year");
+                    yearSelect.innerHTML = ""; // Καθαρίζει παλιές επιλογές
+
+                    for (let year = 2000; year <= 2025; year++) {
+                        let option = document.createElement("option");
+                        option.value = year;
+                        option.textContent = year;
+                        yearSelect.appendChild(option);
+                    }
+                }
+            </script>
+
+        </div>
+    </body>
+</html>

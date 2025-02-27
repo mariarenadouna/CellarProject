@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <title>Cellar</title>
+        <!--fav icon-->
+    </head>
+
+    <body style="background-color: #e9dbc6;">
+        <div class="boxdec">
+
+            <div class="menu">
+                <h2> Καλώς Ήρθες, [όνομα_χρήστη] </h2>
+                <p>Ημερομηνία: <span id="currentDate"></span></p>
+                <a href="#" style="text-decoration: none;"><img src="calendar img.png"> <span>Ημερολόγιο</span> </a>
+                <a href="#" style="text-decoration: none;"><img src="user img.png"> <span>Χρήστης</span> </a>
+                <a href="index.html" style="text-decoration: none;"><img src="logout img.png"> <span>Αποσύνδεση</span> </a>
+            </div>
+
+            <!--Side Menu-->
+            <div class="sidebar" id="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="admin.html"><img src="table img.png"> <span>Overview</span> </a>
+                <a href="orders.html"><img src="orders img.png"> <span>Παραγγελίες</span> </a>
+                <a href="store.html"><img src="wine img.png"> <span>Αποθήκη</span> </a>
+                <a href="statistics.html"><img src="diagram img.png"> <span>Στατιστικά</span> </a>
+                <a href="customers.html"><img src="group img.png"><span>Πελάτες</span></a>
+                <a href="notifications.html"><img src="notifications img.png"> <span>Ειδοποιήσεις</span> </a>
+            </div>
+
+            <span style="font-size:30px;cursor:pointer; position: absolute; left: 100px;" onclick="openNav()">&#9776; open</span>
+
+            <script>
+                function openNav() {
+                  document.getElementById("sidebar").style.width = "250px";
+                }
+                
+                function closeNav() {
+                  document.getElementById("sidebar").style.width = "0";
+                }
+            </script>
+            <br>
+            <br>
+
+            <!--Λίστα με ονόματα πελατών-->
+            <p>Λίστα Πελατών</p>
+            <input type="text" id="searchBox" placeholder="Αναζήτηση..." onkeyup="searchCustomer()" style="margin-bottom: 10px; padding: 5px; width: 200px;">
+
+            <ul id="customerList" class="customer-list">
+                <li onclick="showDetails('Αβραμίδης Γιώργος', '6941234567', 'gavram@gmail.com', 'CUST001')"> <i class="fas fa-user"></i> Αβραμίδης Γιώργος</li>
+                <li onclick="showDetails('Αθανασίου Νίκος', '6901111111', 'athanas@gmail.com', 'CUST002')"> <i class="fas fa-user"></i> Αθανασίου Νίκος</li>
+                <li onclick="showDetails('Αλεξίου Μαρία', '6972222222', 'alexiou.m@gmail.com', 'CUST003')"> <i class="fas fa-user"></i> Αλεξίου Μαρία</li>
+                <li onclick="showDetails('Βασιλειάδης Γιάννης', '6987654321', 'vasil@gmail.com', 'CUST004')"> <i class="fas fa-user"></i> Βασιλειάδης Γιάννης</li>
+                <li onclick="showDetails('Γεωργίου Κώστας', '6933333333', 'georgiou.k@gmail.com', 'CUST005')"><i class="fas fa-user"></i> Γεωργίου Κώστας</li>
+                <li onclick="showDetails('Δημητρίου Πέτρος', '6944444444', 'dimitriou.p@gmail.com', 'CUST006')"> <i class="fas fa-user"></i> Δημητρίου Πέτρος </li>
+                <li onclick="showDetails('Ελευθεριάδης Σπύρος', '6955555555', 'elefth@gmail.com', 'CUST007')"> <i class="fas fa-user"></i> Ελευθεριάδης Σπύρος </li>
+                <li onclick="showDetails('Ζαφειρίου Αντώνης', '6966666666', 'zafeir@gmail.com', 'CUST008')"> <i class="fas fa-user"></i> Ζαφειρίου Αντώνης</li>
+                <li onclick="showDetails('Ηλιόπουλος Μάριος', '6977777777', 'iliopoulos.m@gmail.com', 'CUST009')"> <i class="fas fa-user"></i> Ηλιόπουλος Μάριος </li>
+                <li onclick="showDetails('Θεοδωρίδης Άρης', '6988888888', 'theodoridis.a@gmail.com', 'CUST010')"> <i class="fas fa-user"></i> Θεοδωρίδης Άρης </li>
+                <li onclick="showDetails('Καραγιάννου Δημήτρης', '6999999999', 'karagiannou.d@gmail.com', 'CUST011')"> <i class="fas fa-user"></i> Καραγιάννου Δημήτρης </li>
+                <li onclick="showDetails('Κωνσταντίνου Νίκος', '6901010101', 'konst.n@gmail.com', 'CUST012')"> <i class="fas fa-user"></i> Κωνσταντίνου Νίκος</li>
+                <li onclick="showDetails('Λεοντίου Παναγιώτης', '6902020202', 'leontiou.p@gmail.com', 'CUST013')"> <i class="fas fa-user"></i> Λεοντίου Παναγιώτης </li>
+                <li onclick="showDetails('Μακρίδης Χρήστος', '6903030303', 'makridis.x@gmail.com', 'CUST014')"> <i class="fas fa-user"></i> Μακρίδης Χρήστος </li>
+                <li onclick="showDetails('Νικολάου Ελένη', '6904040404', 'nikol.el@gmail.com', 'CUST015')"> <i class="fas fa-user"></i> Νικολάου Ελένη</li>
+                <li onclick="showDetails('Ξανθόπουλος Στέλιος', '6905050505', 'xanth.st@gmail.com', 'CUST016')"> <i class="fas fa-user"></i> Ξανθόπουλος Στέλιος </li>
+                <li onclick="showDetails('Οικονόμου Άννα', '6906060606', 'oikonomou.a@gmail.com', 'CUST017')"> <i class="fas fa-user"></i> Οικονόμου Άννα </li>
+                <li onclick="showDetails('Παπαδόπουλος Δημήτρης', '6907070707', 'papad.d@gmail.com', 'CUST018')"> <i class="fas fa-user"></i> Παπαδόπουλος Δημήτρης </li>
+                <li onclick="showDetails('Ραφαηλίδης Γιώργος', '6908080808', 'rafael.g@gmail.com', 'CUST019')"> <i class="fas fa-user"></i> Ραφαηλίδης Γιώργος</li>
+            </ul>
+
+            <br>
+            <br>
+            <div id="details-box" style="display:none; background:lightgrey; border-radius: 5px; margin-top: 10px; width: fit-content; width:100%;"></div>
+
+            <!-- FontAwesome για εικονίδια -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+            <script>
+                document.getElementById("currentDate").textContent = new Date().toLocaleDateString();
+                function showDetails(name, phone, email, code) {
+                    document.getElementById("details-box").innerHTML = 
+                        `<strong>${name}</strong><br>
+                        Κωδικός: <b>${code}</b><br>
+                        Τηλέφωνο: ${phone}<br>
+                        Email: ${email}`;
+                    document.getElementById("details-box").style.display = "block";
+                }
+
+                function searchCustomer() {
+                    let input = document.getElementById("searchBox").value.toLowerCase();
+                    let items = document.querySelectorAll("#customerList li");
+
+                    items.forEach((item) => {
+                    if (item.innerText.toLowerCase().includes(input)) {
+                         item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+                }
+            </script>
+        </div>
+    </body>
+</html>

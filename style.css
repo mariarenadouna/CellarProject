@@ -64,3 +64,300 @@
  }
 
  /*end of login page */
+
+ /*start of admin view*/
+ 
+ .boxdec{
+  width: 1450px;
+  height: 200vh;
+  padding: 10px;
+  margin: 20px 10px;
+  background-color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  border-radius: 20px;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+  box-shadow: 5px 10px gray;
+ }
+
+ .dashboard-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 30%;
+}
+
+.activity-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.activity-list li {
+  background: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.activity-list li:hover{
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+ .menu{
+    padding: 20px 200px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px 50px; 
+ }
+
+ .menu p{
+  margin-right: 50px;
+ }
+
+ .menu h2 {
+  margin-right: auto;
+}
+
+.menu img {
+  margin-left: 30px;
+}
+
+.menu a span {
+  display: block;
+  margin-top: 5px;
+  font-size: 16px;
+  color: black;
+  margin-left: 15px;
+}
+
+.menu a span:hover {
+  color: darkgray;
+}
+
+
+  /*Side Bar*/
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#e9dbc6;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.sidebar a img {
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar a span {
+  display: block;
+  margin-top: 5px;
+  font-size: 16px;
+  color: black;
+}
+
+.sidebar a span:hover {
+  color:white;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.closebtn:hover{
+  color: white;
+}
+
+  /*End of sidebar*/
+.table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 0;
+}
+
+.table th,td{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.customer-list {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+}
+
+.customer-list li {
+  display: block;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.customer-list li:hover{
+  color:dimgrey;
+}
+.orders-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+.buttonOrdrs {
+  background-color: #e9dbc6; /* Σκούρο κόκκινο */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 120px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.container{
+  display:grid;
+  justify-content:center;
+  margin: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.storage{
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 60%;
+}
+
+.select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.month-year-container {
+  margin-top: 10px;
+}
+
+/*End of Admin View*/
+
+/*Start of Customer View*/
+.status.in-progress {
+  color: orange;
+  font-weight: bold;
+}
+
+.product-suggestions {
+  display: flex;
+  gap: 10px;
+}
+
+.product-card {
+  background: #d1ecf1;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+}
+
+.order-history {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-history h3 {
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.order-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-history li {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #555;
+}
+
+.order-history li:nth-child(odd) {
+  background: #f1f1f1;
+}
+
+.order-history li span {
+  font-weight: bold;
+  color: #000;
+}
+
+.offers{
+  text-align:justify;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/*End of Customer View*/
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+

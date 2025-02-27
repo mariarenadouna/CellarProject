@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellar</title>
+</head>
+<body style="background-color: #e9dbc6;">
+    <div class="boxdec">
+        <div class="menu">
+            <h2>Καλώς Ήρθες, [όνομα_χρήστη]</h2>
+            <p>Ημερομηνία: <span id="currentDate"></span></p>
+            <a href="#" style="text-decoration: none;"><img src="calendar img.png"> <span>Ημερολόγιο</span> </a>
+            <a href="#" style="text-decoration: none;"><img src="user img.png"> <span>Χρήστης</span> </a>
+            <a href="index.html" style="text-decoration: none;"><img src="logout img.png"> <span>Αποσύνδεση</span> </a>
+        </div>
+
+        <!-- Side Menu -->
+        <div class="sidebar" id="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="admin.html"><img src="table img.png"> <span>Overview</span> </a>
+            <a href="orders.html"><img src="orders img.png"> <span>Παραγγελίες</span> </a>
+            <a href="store.html"><img src="wine img.png"> <span>Αποθήκη</span> </a>
+            <a href="statistics.html"><img src="diagram img.png"> <span>Στατιστικά</span> </a>
+            <a href="customers.html"><img src="group img.png"><span>Πελάτες</span></a>
+            <a href="notifications.html"><img src="notifications img.png"> <span>Ειδοποιήσεις</span> </a>
+        </div>
+        <span style="font-size:30px;cursor:pointer; position: absolute; left: 100px;" onclick="openNav()">&#9776; open</span>
+
+        <script>
+            document.getElementById("currentDate").textContent = new Date().toLocaleDateString();
+            function openNav() {
+                document.getElementById("sidebar").style.width = "250px";
+            }
+            function closeNav() {
+                document.getElementById("sidebar").style.width = "0";
+            }
+            function searchOrder() {
+                let input = document.getElementById("searchInput").value.toLowerCase();
+                let table = document.getElementById("table");
+                let rows = table.getElementsByTagName("tr");
+                
+                for (let i = 1; i < rows.length; i++) {
+                    let orderCode = rows[i].getElementsByTagName("td")[4];
+                    if (orderCode) {
+                        let orderText = orderCode.textContent || orderCode.innerText;
+                        rows[i].style.display = orderText.includes(input) ? "" : "none";
+                    }
+                }
+            }
+        </script>
+
+        <br><br>
+        <p>Αναζήτηση Παραγγελίας</p>
+        <input type="text" id="searchInput" onkeyup="searchOrder()" placeholder="Αναζήτηση με κωδικό παραγγελίας...">
+
+        <br><br>
+        <p>Πρόσφατες Παραγγελίες</p>
+        <table id="table" style="position: absolute; right: 300px;">
+            <tr>
+                <th>Α/Α</th>
+                <th>Όν. Πελάτη</th>
+                <th>Κωδ. Πελάτη</th>
+                <th>Ημ. Παραγγελίας</th>
+                <th>Κωδ. Παραγγελίας</th>
+                <th>Όν. Προϊόντος</th>
+                <th>Ποσότητα</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Παπαδόπουλος Γεώργιος</td>
+                <td>0000</td>
+                <td>14-02-2025</td>
+                <td>1047-7589-2</td>
+                <td>Κόκκινο Ημίγλυκο</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Δημητρίου Δημήτρης</td>
+                <td>0005</td>
+                <td>14-02-2025</td>
+                <td>5555-8879-6</td>
+                <td>Λευκό Ξηρό</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Ιωάννου Χρήστος</td>
+                <td>0014</td>
+                <td>12-02-2025</td>
+                <td>6669-7771-8</td>
+                <td>Λευκό Ξηρό</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Παπαδόπουλος Γεώργιος</td>
+                <td>0000</td>
+                <td>10-02-2025</td>
+                <td>1047-7589-2</td>
+                <td>Κόκκινο Ημίγλυκο</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Παπαδόπουλος Γεώργιος</td>
+                <td>0000</td>
+                <td>10-02-2025</td>
+                <td>1047-7589-2</td>
+                <td>Ροζέ Ημίγλυκο</td>
+                <td>20</td>
+            </tr>
+        </table>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <p>Λήψη αρχείου συνολικών παραγγελιών</p>
+        <img src="orders img.png">
+    </div>
+</body>
+</html>
